@@ -1,0 +1,84 @@
+/* Configurações gerais e cores */
+:root {
+  --cor-principal: #e63946;
+  --cor-principal-escura: #c1121f;
+  --cor-fundo: #f8f9fa;
+  --cor-card-fundo: #ffffff;
+  --cor-texto: #2b2d42;
+  --cor-borda: #f1faee;
+  --cor-destaque: #fff0f3;
+  --cor-bom-desempenho: #2a9d8f;
+  --cor-atencao: #e76f51;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  padding: 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+.header {
+  text-align: center;
+  background-color: var(--cor-principal);
+  color: white;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(230, 57, 70, 0.2);
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Grid de Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* Estilo divertido dos Cards */
+.card {
+  background-color: var(--cor-card-fundo);
+  border: 2px solid var(--cor-principal);
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card.highlight {
+  background-color: var(--cor-destaque);
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  color: var(--cor-texto);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.card-valor {
+  font-size: 1.8rem;
+  font-weight: bold;
