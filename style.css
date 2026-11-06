@@ -1,14 +1,13 @@
-/* Configurações gerais e tema Escolar Vermelho & Branco */
+/* Configurações gerais - Estilo Trapper / Streetwear */
 :root {
-  --cor-principal: #d62828;
-  --cor-principal-escura: #9e1b1b;
-  --cor-fundo: #f4f6f9;
-  --cor-card-fundo: #ffffff;
-  --cor-texto: #1d3557;
-  --cor-borda-caderno: #e0e4ec;
-  --cor-bom-desempenho: #2a9d8f;
-  --cor-atencao: #e76f51;
-  --cor-linhas-quadro: rgba(214, 40, 40, 0.08);
+  --cor-principal: #ff0055;
+  --cor-roxo-trap: #7928ca;
+  --cor-fundo: #0b0b0e;
+  --cor-card-fundo: rgba(18, 18, 24, 0.85);
+  --cor-texto: #ffffff;
+  --cor-borda-trap: rgba(255, 0, 85, 0.3);
+  --cor-bom-desempenho: #00f5d4;
+  --cor-atencao: #ff5400;
 }
 
 * {
@@ -18,15 +17,14 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   padding: 20px;
-  /* Fundo sutil quadriculado estilo folha de caderno */
+  /* Fundo escuro urbano com pontos radiais de luz roxa e vermelha */
   background-image: 
-    linear-gradient(var(--cor-linhas-quadro) 1px, transparent 1px),
-    linear-gradient(90deg, var(--cor-linhas-quadro) 1px, transparent 1px);
-  background-size: 24px 24px;
+    radial-gradient(circle at 15% 15%, rgba(121, 40, 202, 0.18), transparent 35%),
+    radial-gradient(circle at 85% 85%, rgba(255, 0, 85, 0.15), transparent 40%);
   background-attachment: fixed;
 }
 
@@ -35,32 +33,37 @@ body {
   margin: 0 auto;
 }
 
-/* Cabeçalho estilo Banner Escolar */
+/* Cabeçalho estilo Banner Streetwear */
 .header {
   text-align: center;
-  background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-escura));
+  background: linear-gradient(135deg, var(--cor-principal), var(--cor-roxo-trap));
   color: white;
   padding: 30px 20px;
   border-radius: 20px;
   margin-bottom: 25px;
-  border-bottom: 5px solid #00000015;
-  box-shadow: 0 8px 16px rgba(214, 40, 40, 0.2);
-  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(255, 0, 85, 0.3);
 }
 
 .header h1 {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   margin-bottom: 6px;
-  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .subtitulo {
-  font-size: 1.1rem;
-  background: rgba(255, 255, 255, 0.2);
+  font-size: 0.95rem;
+  background: rgba(0, 0, 0, 0.35);
   display: inline-block;
-  padding: 4px 16px;
-  border-radius: 12px;
-  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Grid de Cards */
@@ -71,44 +74,48 @@ body {
   margin-bottom: 30px;
 }
 
-/* Cards com Estilo de Bloco de Notas Escolar */
+/* Cards foscos no estilo Trap */
 .card {
-  background-color: var(--cor-card-fundo);
-  border: 2px solid var(--cor-borda-caderno);
-  border-top: 4px solid var(--cor-principal);
-  border-radius: 16px;
-  padding: 18px;
+  background: var(--cor-card-fundo);
+  border: 1.5px solid var(--cor-borda-trap);
+  border-radius: 18px;
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(214, 40, 40, 0.12);
+  transform: translateY(-5px);
+  border-color: var(--cor-principal);
+  box-shadow: 0 12px 25px rgba(255, 0, 85, 0.25);
 }
 
 .card.highlight {
-  border-top-color: #1d3557;
-  background-color: #f8f9fa;
+  border-color: rgba(121, 40, 202, 0.6);
+  background: rgba(25, 20, 35, 0.9);
 }
 
 .card h3 {
-  font-size: 0.85rem;
-  color: #6c757d;
-  margin-bottom: 8px;
+  font-size: 0.8rem;
+  color: #a0a0b0;
+  margin-bottom: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
 }
 
 .card-valor {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--cor-principal);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--cor-texto);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
 .card.highlight .card-valor {
-  color: var(--cor-texto);
+  color: #ffffff;
+  text-shadow: 0 0 12px var(--cor-roxo-trap);
 }
 
 .card-subtexto {
@@ -116,16 +123,19 @@ body {
   color: var(--cor-bom-desempenho);
   font-weight: 700;
   display: block;
-  margin-top: 4px;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Tabela Responsiva de Boletim */
+/* Tabela Responsiva Dark */
 .tabela-container {
-  background: white;
-  border-radius: 18px;
+  background: var(--cor-card-fundo);
+  border-radius: 20px;
   padding: 18px;
-  border: 2px solid var(--cor-borda-caderno);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
   overflow-x: auto;
 }
 
@@ -136,43 +146,45 @@ table {
 }
 
 th, td {
-  padding: 13px 15px;
-  border-bottom: 1px solid #edf2f7;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 th {
-  background-color: var(--cor-principal);
+  background: linear-gradient(90deg, var(--cor-principal), var(--cor-roxo-trap));
   color: white;
-  font-weight: 600;
+  font-weight: 800;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
 }
 
 th:first-child {
-  border-top-left-radius: 10px;
+  border-top-left-radius: 12px;
 }
 
 th:last-child {
-  border-top-right-radius: 10px;
+  border-top-right-radius: 12px;
 }
 
 tr:hover {
-  background-color: #fff5f5;
+  background-color: rgba(255, 0, 85, 0.08);
 }
 
-/* Situações dos Alunos */
+/* Destaques das Situações */
 .situacao-bom {
   color: var(--cor-bom-desempenho);
-  font-weight: bold;
+  font-weight: 800;
+  text-shadow: 0 0 8px rgba(0, 245, 212, 0.3);
 }
 
 .situacao-atencao {
   color: var(--cor-atencao);
-  font-weight: bold;
+  font-weight: 800;
+  text-shadow: 0 0 8px rgba(255, 84, 0, 0.3);
 }
 
 .situacao-indisponivel {
-  color: #a0aec0;
+  color: #6c757d;
   font-style: italic;
 }
