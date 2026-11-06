@@ -1,14 +1,14 @@
-/* Configurações gerais e cores com temas LED */
+/* Configurações gerais e tema Escolar Vermelho & Branco */
 :root {
-  --cor-principal: #ff0055;
-  --cor-principal-escura: #d60045;
-  --cor-fundo: #090a0f;
-  --cor-card-fundo: rgba(20, 24, 33, 0.9);
-  --cor-texto: #ffffff;
-  --cor-borda-led: #ff0055;
-  --cor-led-azul: #00f0ff;
-  --cor-bom-desempenho: #00ff88;
-  --cor-atencao: #ff5500;
+  --cor-principal: #d62828;
+  --cor-principal-escura: #9e1b1b;
+  --cor-fundo: #f4f6f9;
+  --cor-card-fundo: #ffffff;
+  --cor-texto: #1d3557;
+  --cor-borda-caderno: #e0e4ec;
+  --cor-bom-desempenho: #2a9d8f;
+  --cor-atencao: #e76f51;
+  --cor-linhas-quadro: rgba(214, 40, 40, 0.08);
 }
 
 * {
@@ -22,8 +22,11 @@ body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   padding: 20px;
-  /* Fundo escuro com ponto de luz neon em LED */
-  background-image: radial-gradient(circle at 50% 10%, rgba(255, 0, 85, 0.15), transparent 60%);
+  /* Fundo sutil quadriculado estilo folha de caderno */
+  background-image: 
+    linear-gradient(var(--cor-linhas-quadro) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cor-linhas-quadro) 1px, transparent 1px);
+  background-size: 24px 24px;
   background-attachment: fixed;
 }
 
@@ -32,32 +35,32 @@ body {
   margin: 0 auto;
 }
 
-/* Cabeçalho com Efeito Neon LED */
+/* Cabeçalho estilo Banner Escolar */
 .header {
   text-align: center;
-  background: linear-gradient(135deg, var(--cor-principal), #8000ff);
+  background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-escura));
   color: white;
-  padding: 25px;
+  padding: 30px 20px;
   border-radius: 20px;
   margin-bottom: 25px;
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 20px var(--cor-principal), 0 0 40px rgba(128, 0, 255, 0.5);
-  animation: pulseLedHeader 3s infinite alternate;
+  border-bottom: 5px solid #00000015;
+  box-shadow: 0 8px 16px rgba(214, 40, 40, 0.2);
+  position: relative;
 }
 
 .header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px #ffffff, 0 0 20px var(--cor-principal);
+  font-size: 2.3rem;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
 }
 
 .subtitulo {
   font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 12px;
   font-weight: 600;
-  opacity: 0.95;
-  letter-spacing: 1px;
 }
 
 /* Grid de Cards */
@@ -68,62 +71,61 @@ body {
   margin-bottom: 30px;
 }
 
-/* Cards com bordas de LED brilhante */
+/* Cards com Estilo de Bloco de Notas Escolar */
 .card {
   background-color: var(--cor-card-fundo);
-  border: 2px solid var(--cor-borda-led);
-  border-radius: 18px;
+  border: 2px solid var(--cor-borda-caderno);
+  border-top: 4px solid var(--cor-principal);
+  border-radius: 16px;
   padding: 18px;
   text-align: center;
-  box-shadow: 0 0 12px rgba(255, 0, 85, 0.4), inset 0 0 10px rgba(255, 0, 85, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px var(--cor-borda-led), inset 0 0 15px var(--cor-borda-led);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(214, 40, 40, 0.12);
 }
 
 .card.highlight {
-  border-color: var(--cor-led-azul);
-  box-shadow: 0 0 15px var(--cor-led-azul), inset 0 0 10px rgba(0, 240, 255, 0.2);
+  border-top-color: #1d3557;
+  background-color: #f8f9fa;
 }
 
 .card h3 {
-  font-size: 0.9rem;
-  color: #dddddd;
+  font-size: 0.85rem;
+  color: #6c757d;
   margin-bottom: 8px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .card-valor {
   font-size: 2rem;
   font-weight: bold;
-  color: #ffffff;
-  text-shadow: 0 0 10px var(--cor-borda-led);
+  color: var(--cor-principal);
 }
 
 .card.highlight .card-valor {
-  text-shadow: 0 0 10px var(--cor-led-azul);
+  color: var(--cor-texto);
 }
 
 .card-subtexto {
   font-size: 0.8rem;
-  color: var(--cor-led-azul);
-  font-weight: 600;
+  color: var(--cor-bom-desempenho);
+  font-weight: 700;
   display: block;
   margin-top: 4px;
-  text-shadow: 0 0 5px var(--cor-led-azul);
 }
 
-/* Tabela Responsiva Estilo Gamer/LED */
+/* Tabela Responsiva de Boletim */
 .tabela-container {
-  background: var(--cor-card-fundo);
+  background: white;
   border-radius: 18px;
-  padding: 15px;
-  border: 2px solid var(--cor-borda-led);
-  box-shadow: 0 0 20px rgba(255, 0, 85, 0.3);
+  padding: 18px;
+  border: 2px solid var(--cor-borda-caderno);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   overflow-x: auto;
 }
 
@@ -134,17 +136,17 @@ table {
 }
 
 th, td {
-  padding: 14px 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 13px 15px;
+  border-bottom: 1px solid #edf2f7;
 }
 
 th {
   background-color: var(--cor-principal);
   color: white;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 0 10px var(--cor-principal);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
 }
 
 th:first-child {
@@ -156,32 +158,21 @@ th:last-child {
 }
 
 tr:hover {
-  background-color: rgba(255, 0, 85, 0.15);
+  background-color: #fff5f5;
 }
 
-/* Destaques de Luz LED para as Situações */
+/* Situações dos Alunos */
 .situacao-bom {
   color: var(--cor-bom-desempenho);
   font-weight: bold;
-  text-shadow: 0 0 8px var(--cor-bom-desempenho);
 }
 
 .situacao-atencao {
   color: var(--cor-atencao);
   font-weight: bold;
-  text-shadow: 0 0 8px var(--cor-atencao);
 }
 
 .situacao-indisponivel {
-  color: #8d99ae;
+  color: #a0aec0;
   font-style: italic;
 }
-
-/* Animação Neon Pulsante */
-@keyframes pulseLedHeader {
-  0% {
-    box-shadow: 0 0 15px var(--cor-principal), 0 0 30px rgba(128, 0, 255, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 30px var(--cor-principal), 0 0 60px rgba(128, 0, 255, 0.8);
-  }
