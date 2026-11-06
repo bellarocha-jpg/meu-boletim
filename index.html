@@ -12,57 +12,89 @@
     <!-- Cabeçalho do Boletim -->
     <header class="header">
       <h1>Boletim Digital</h1>
-      <p class="subtitulo">Estudante Exemplo • 9º Ano</p>
+      <p class="subtitulo">Estudante Exemplo • 9º Ano - Turma 9B (Nº 06)</p>
     </header>
 
-    <!-- Área de Cards de Resumo -->
-    <section class="cards-grid">
-      <div class="card">
-        <h3>Média Geral</h3>
-        <p id="card-media-geral" class="card-valor">—</p>
+    <!-- Área de Acesso / Login com PIN -->
+    <section id="area-acesso" class="card-acesso">
+      <h2>Acesso ao Boletim</h2>
+      <p class="info-aluno">Turma: <strong>9B</strong> | Número: <strong>06</strong></p>
+      <div class="form-acesso">
+        <input type="password" id="input-pin" placeholder="Digite seu PIN" maxlength="10">
+        <button id="btn-entrar">Entrar</button>
       </div>
-
-      <div class="card">
-        <h3>Total de Faltas</h3>
-        <p id="card-total-faltas" class="card-valor">—</p>
-      </div>
-
-      <div class="card">
-        <h3>Bom Desempenho</h3>
-        <p id="card-bom-desempenho" class="card-valor">—</p>
-      </div>
-
-      <div class="card">
-        <h3>Precisam de Atenção</h3>
-        <p id="card-atencao" class="card-valor">—</p>
-      </div>
-
-      <div class="card highlight">
-        <h3>Frequência Geral</h3>
-        <p id="card-frequencia" class="card-valor">92%</p>
-        <span class="card-subtexto">Frequência adequada</span>
-      </div>
+      <p id="msg-acesso" class="msg-status"></p>
     </section>
 
-    <!-- Tabela Responsiva de Disciplinas -->
-    <section class="tabela-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Disciplina</th>
-            <th>1º Tri</th>
-            <th>2º Tri</th>
-            <th>3º Tri</th>
-            <th>Média</th>
-            <th>Faltas</th>
-            <th>Situação</th>
-          </tr>
-        </thead>
-        <tbody id="tabela-boletim">
-          <!-- O JavaScript vai preencher as linhas aqui -->
-        </tbody>
-      </table>
-    </section>
+    <!-- Conteúdo Principal do Boletim (Oculto até realizar o login) -->
+    <main id="conteudo-boletim" class="escondido">
+      <!-- Painel de Ações -->
+      <div class="painel-acoes">
+        <button id="btn-alterar-dados" class="btn-acao">Alterar dados</button>
+      </div>
+
+      <!-- Área de Cards de Resumo -->
+      <section class="cards-grid">
+        <div class="card">
+          <h3>Média Geral</h3>
+          <p id="card-media-geral" class="card-valor">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Total de Faltas</h3>
+          <p id="card-total-faltas" class="card-valor">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Bom Desempenho</h3>
+          <p id="card-bom-desempenho" class="card-valor">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Precisam de Atenção</h3>
+          <p id="card-atencao" class="card-valor">—</p>
+        </div>
+
+        <div class="card highlight">
+          <h3>Frequência Geral</h3>
+          <p id="card-frequencia" class="card-valor">92%</p>
+          <span class="card-subtexto">Frequência adequada</span>
+        </div>
+      </section>
+
+      <!-- Tabela Responsiva de Disciplinas -->
+      <section class="tabela-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>1º Tri</th>
+              <th>2º Tri</th>
+              <th>3º Tri</th>
+              <th>Média</th>
+              <th>Faltas</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-boletim">
+            <!-- O JavaScript vai preencher as linhas aqui -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Painel Modal/Formulário de Edição -->
+      <section id="area-edicao" class="painel-edicao escondido">
+        <h2>Alterar Notas e Faltas</h2>
+        <div id="container-campos-edicao" class="campos-edicao-grid">
+          <!-- Os campos de edição serão gerados dinamicamente via JS -->
+        </div>
+        <div class="edicao-acoes">
+          <button id="btn-salvar-dados" class="btn-acao btn-salvar">Salvar alterações</button>
+          <button id="btn-cancelar-edicao" class="btn-acao btn-cancelar">Cancelar</button>
+        </div>
+        <p id="msg-edicao" class="msg-status"></p>
+      </section>
+    </main>
   </div>
 
   <script src="script.js"></script>
