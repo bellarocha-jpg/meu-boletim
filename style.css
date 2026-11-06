@@ -1,148 +1,41 @@
-/* Configurações gerais e cores */
-:root {
-  --cor-principal: #e63946;
-  --cor-principal-escura: #c1121f;
-  --cor-fundo: #f8f9fa;
-  --cor-card-fundo: #ffffff;
-  --cor-texto: #2b2d42;
-  --cor-borda: #f1faee;
-  --cor-destaque: #fff0f3;
-  --cor-bom-desempenho: #2a9d8f;
-  --cor-atencao: #e76f51;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Fundo Estilo Aurora Boreal Animada */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
+  margin: 0;
   padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f8ff;
+  background: linear-gradient(-45deg, #020b14, #003b46, #07575b, #2e003e, #0d1b2a);
+  background-size: 400% 400%;
+  animation: auroraBoreal 15s ease infinite;
+  background-attachment: fixed;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
+/* Animação do suave movimento de luzes */
+@keyframes auroraBoreal {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-/* Cabeçalho */
-.header {
-  text-align: center;
-  background-color: var(--cor-principal);
-  color: white;
-  padding: 25px;
-  border-radius: 20px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 10px rgba(230, 57, 70, 0.2);
-}
-
-.header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 5px;
-}
-
-.subtitulo {
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* Grid de Cards */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin-bottom: 30px;
-}
-
-/* Estilo divertido dos Cards */
+/* Ajuste nos Cards para combinar com a Aurora (Semi-transparentes) */
 .card {
-  background-color: var(--cor-card-fundo);
-  border: 2px solid var(--cor-principal);
+  background: rgba(13, 27, 42, 0.65);
+  border: 1px solid rgba(84, 255, 186, 0.4);
   border-radius: 18px;
   padding: 18px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.card.highlight {
-  background-color: var(--cor-destaque);
-}
-
-.card h3 {
-  font-size: 0.9rem;
-  color: var(--cor-texto);
-  margin-bottom: 8px;
-  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 255, 170, 0.15);
 }
 
 .card-valor {
   font-size: 1.8rem;
   font-weight: bold;
-  color: var(--cor-principal-escura);
-}
-
-.card-subtexto {
-  font-size: 0.8rem;
-  color: var(--cor-principal);
-  font-weight: 600;
-  display: block;
-  margin-top: 4px;
-}
-
-/* Tabela Responsiva */
-.tabela-container {
-  background: white;
-  border-radius: 18px;
-  padding: 15px;
-  border: 2px solid #eee;
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-}
-
-th, td {
-  padding: 12px 15px;
-  border-bottom: 1px solid #eee;
-}
-
-th {
-  background-color: var(--cor-principal);
-  color: white;
-  font-weight: 600;
-}
-
-th:first-child {
-  border-top-left-radius: 10px;
-}
-
-th:last-child {
-  border-top-right-radius: 10px;
-}
-
-tr:hover {
-  background-color: #fff5f5;
-}
-
-/* Destaques para Situação */
-.situacao-bom {
-  color: var(--cor-bom-desempenho);
-  font-weight: bold;
-}
-
-.situacao-atencao {
-  color: var(--cor-atencao);
-  font-weight: bold;
-}
-
-.situacao-indisponivel {
-  color: #8d99ae;
-  font-style: italic;
+  color: #54ffba;
 }
