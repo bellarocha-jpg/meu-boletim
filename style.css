@@ -89,4 +89,296 @@ body {
 }
 
 .info-aluno {
-  font-size: 0.
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  color: #cccccc;
+}
+
+.form-acesso {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-acesso input {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid var(--cor-borda-ouro);
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  width: 60%;
+}
+
+.form-acesso input:focus {
+  border-color: var(--cor-ouro);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+/* Estilos de Botões */
+.btn-acao, .form-acesso button {
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--cor-ouro);
+  background: linear-gradient(135deg, var(--cor-principal), #800020);
+  color: var(--cor-ouro);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-acao:hover, .form-acesso button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.painel-acoes {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+/* Painel de Edição */
+.painel-edicao {
+  background: var(--cor-card-fundo);
+  border: 1.5px solid var(--cor-borda-ouro);
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.painel-edicao h2 {
+  color: var(--cor-ouro);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.campos-edicao-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 450px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+
+.item-edicao-disciplina {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.item-edicao-disciplina h4 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.inputs-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.campo-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.campo-input-group label {
+  font-size: 0.75rem;
+  color: #aaaaaa;
+  text-transform: uppercase;
+}
+
+.campo-input-group input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(10, 10, 14, 0.8);
+  color: #ffffff;
+  text-align: center;
+}
+
+.campo-input-group input.invalido {
+  border-color: #ff3300 !important;
+  box-shadow: 0 0 8px rgba(255, 51, 0, 0.6);
+}
+
+.edicao-acoes {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-cancelar {
+  background: transparent;
+  border-color: #777777;
+  color: #ffffff;
+}
+
+.btn-salvar {
+  background: linear-gradient(135deg, #00aa44, #005522);
+  border-color: #00ff66;
+  color: #ffffff;
+}
+
+/* Mensagens de Status */
+.msg-status {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.msg-status.erro {
+  color: #ff3300;
+}
+
+.msg-status.sucesso {
+  color: #00ff66;
+}
+
+.msg-status.info {
+  color: var(--cor-ouro);
+}
+
+/* Classes Utilitárias */
+.escondido {
+  display: none !important;
+}
+
+/* Grid de Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* Cards com detalhes em Ouro e Neons */
+.card {
+  background: var(--cor-card-fundo);
+  border: 1.5px solid var(--cor-borda-ouro);
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--cor-ouro);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.card.highlight {
+  border-color: var(--cor-principal);
+  background: rgba(30, 10, 18, 0.95);
+  box-shadow: 0 0 15px rgba(230, 0, 57, 0.3);
+}
+
+.card h3 {
+  font-size: 0.8rem;
+  color: #cccccc;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.card-valor {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--cor-ouro);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.card.highlight .card-valor {
+  color: #ffffff;
+  text-shadow: 0 0 10px var(--cor-principal);
+}
+
+.card-subtexto {
+  font-size: 0.8rem;
+  color: var(--cor-bom-desempenho);
+  font-weight: 700;
+  display: block;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Tabela Responsiva Estilo Funk */
+.tabela-container {
+  background: var(--cor-card-fundo);
+  border-radius: 20px;
+  padding: 18px;
+  border: 1.5px solid var(--cor-borda-ouro);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+th {
+  background: linear-gradient(90deg, var(--cor-principal), #800020);
+  color: var(--cor-ouro);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+}
+
+th:first-child {
+  border-top-left-radius: 12px;
+}
+
+th:last-child {
+  border-top-right-radius: 12px;
+}
+
+tr:hover {
+  background-color: rgba(230, 0, 57, 0.15);
+}
+
+/* Destaques das Situações */
+.situacao-bom {
+  color: var(--cor-bom-desempenho);
+  font-weight: 800;
+  text-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
+}
+
+.situacao-atencao {
+  color: var(--cor-atencao);
+  font-weight: 800;
+  text-shadow: 0 0 8px rgba(255, 51, 0, 0.4);
+}
+
+.situacao-indisponivel {
+  color: #777777;
+  font-style: italic;
+}
