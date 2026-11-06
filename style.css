@@ -1,41 +1,187 @@
-/* Fundo Estilo Aurora Boreal Animada */
-body {
+/* Configurações gerais e cores com temas LED */
+:root {
+  --cor-principal: #ff0055;
+  --cor-principal-escura: #d60045;
+  --cor-fundo: #090a0f;
+  --cor-card-fundo: rgba(20, 24, 33, 0.9);
+  --cor-texto: #ffffff;
+  --cor-borda-led: #ff0055;
+  --cor-led-azul: #00f0ff;
+  --cor-bom-desempenho: #00ff88;
+  --cor-atencao: #ff5500;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+}
+
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #f0f8ff;
-  background: linear-gradient(-45deg, #020b14, #003b46, #07575b, #2e003e, #0d1b2a);
-  background-size: 400% 400%;
-  animation: auroraBoreal 15s ease infinite;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  padding: 20px;
+  /* Fundo escuro com ponto de luz neon em LED */
+  background-image: radial-gradient(circle at 50% 10%, rgba(255, 0, 85, 0.15), transparent 60%);
   background-attachment: fixed;
 }
 
-/* Animação do suave movimento de luzes */
-@keyframes auroraBoreal {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* Ajuste nos Cards para combinar com a Aurora (Semi-transparentes) */
+/* Cabeçalho com Efeito Neon LED */
+.header {
+  text-align: center;
+  background: linear-gradient(135deg, var(--cor-principal), #8000ff);
+  color: white;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 20px var(--cor-principal), 0 0 40px rgba(128, 0, 255, 0.5);
+  animation: pulseLedHeader 3s infinite alternate;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px var(--cor-principal);
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0.95;
+  letter-spacing: 1px;
+}
+
+/* Grid de Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* Cards com bordas de LED brilhante */
 .card {
-  background: rgba(13, 27, 42, 0.65);
-  border: 1px solid rgba(84, 255, 186, 0.4);
+  background-color: var(--cor-card-fundo);
+  border: 2px solid var(--cor-borda-led);
   border-radius: 18px;
   padding: 18px;
   text-align: center;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 255, 170, 0.15);
+  box-shadow: 0 0 12px rgba(255, 0, 85, 0.4), inset 0 0 10px rgba(255, 0, 85, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px var(--cor-borda-led), inset 0 0 15px var(--cor-borda-led);
+}
+
+.card.highlight {
+  border-color: var(--cor-led-azul);
+  box-shadow: 0 0 15px var(--cor-led-azul), inset 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  color: #dddddd;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .card-valor {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
-  color: #54ffba;
+  color: #ffffff;
+  text-shadow: 0 0 10px var(--cor-borda-led);
 }
+
+.card.highlight .card-valor {
+  text-shadow: 0 0 10px var(--cor-led-azul);
+}
+
+.card-subtexto {
+  font-size: 0.8rem;
+  color: var(--cor-led-azul);
+  font-weight: 600;
+  display: block;
+  margin-top: 4px;
+  text-shadow: 0 0 5px var(--cor-led-azul);
+}
+
+/* Tabela Responsiva Estilo Gamer/LED */
+.tabela-container {
+  background: var(--cor-card-fundo);
+  border-radius: 18px;
+  padding: 15px;
+  border: 2px solid var(--cor-borda-led);
+  box-shadow: 0 0 20px rgba(255, 0, 85, 0.3);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 14px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+  background-color: var(--cor-principal);
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px var(--cor-principal);
+}
+
+th:first-child {
+  border-top-left-radius: 10px;
+}
+
+th:last-child {
+  border-top-right-radius: 10px;
+}
+
+tr:hover {
+  background-color: rgba(255, 0, 85, 0.15);
+}
+
+/* Destaques de Luz LED para as Situações */
+.situacao-bom {
+  color: var(--cor-bom-desempenho);
+  font-weight: bold;
+  text-shadow: 0 0 8px var(--cor-bom-desempenho);
+}
+
+.situacao-atencao {
+  color: var(--cor-atencao);
+  font-weight: bold;
+  text-shadow: 0 0 8px var(--cor-atencao);
+}
+
+.situacao-indisponivel {
+  color: #8d99ae;
+  font-style: italic;
+}
+
+/* Animação Neon Pulsante */
+@keyframes pulseLedHeader {
+  0% {
+    box-shadow: 0 0 15px var(--cor-principal), 0 0 30px rgba(128, 0, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 30px var(--cor-principal), 0 0 60px rgba(128, 0, 255, 0.8);
+  }
